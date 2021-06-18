@@ -42,36 +42,35 @@ Widget myWidget() {
         alignment: Alignment.topCenter,
         child: Container(
           height: 92,
-          //width: 200,
-          color: Colors.red,
-          // child: Row(
-          //   children: <Widget>[
-          //     FractionallySizedBox(
-          //       widthFactor: 0.25,
-          //       child: Container(
-          //         color: Colors.green,
-          //         ),
-          //     ),
-          //     FractionallySizedBox(
-          //       widthFactor: 0.25,
-          //       child: Container(
-          //         color: Colors.green,
-          //         ),
-          //     ),
-          //     FractionallySizedBox(
-          //       widthFactor: 0.25,
-          //       child: Container(
-          //         color: Colors.green,
-          //         ),
-          //     ),
-          //     FractionallySizedBox(
-          //       widthFactor: 0.25,
-          //       child: Container(
-          //         color: Colors.green,
-          //         ),
-          //     ),
-          // ],
-          // ),
+          //color: Colors.red,
+          child: Row(
+            children: <Widget>[
+              Expanded(
+                flex: 25,
+                child: Container(
+                  color: Colors.green,
+                  ),
+              ),
+              Expanded(
+                flex: 25,
+                child: Container(
+                  color: Colors.amber,
+                  ),
+              ),
+              Expanded(
+                flex: 25,
+                child: Container(
+                  color: Colors.pink,
+                  ),
+              ),
+              Expanded(
+                flex: 25,
+                child: Container(
+                  color: Colors.black,
+                  ),
+              ),
+          ],
+          ),
         ),
         // child: TextField(
         //   decoration: InputDecoration.collapsed(hintText: 'Abdellah'),
