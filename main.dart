@@ -40,37 +40,169 @@ Widget myWidget() {
         height: 460,
         color: Colors.blue[200],
         alignment: Alignment.topCenter,
-        child: Container(
-          height: 92,
-          //color: Colors.red,
-          child: Row(
-            children: <Widget>[
-              Expanded(
-                flex: 25,
-                child: Container(
-                  color: Colors.green,
+        child: Column(
+          children: <Widget>[
+            Container(
+              height: 92,
+              //color: Colors.red,
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    flex: 25,
+                    child: Container(
+                      color: Colors.green,
+                      ),
                   ),
-              ),
-              Expanded(
-                flex: 25,
-                child: Container(
-                  color: Colors.amber,
+                  Expanded(
+                    flex: 25,
+                    child: Container(
+                      color: Colors.amber,
+                      ),
                   ),
-              ),
-              Expanded(
-                flex: 25,
-                child: Container(
-                  color: Colors.pink,
+                  Expanded(
+                    flex: 25,
+                    child: Container(
+                      color: Colors.pink,
+                      ),
                   ),
-              ),
-              Expanded(
-                flex: 25,
-                child: Container(
-                  color: Colors.black,
+                  Expanded(
+                    flex: 25,
+                    child: Container(
+                      color: Colors.black,
+                      ),
                   ),
+              ],
               ),
+            ),
+            Container(
+              height: 92,
+              //color: Colors.red,
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    flex: 25,
+                    child: Container(
+                      color: Colors.red
+                      ),
+                  ),
+                  Expanded(
+                    flex: 25,
+                    child: Container(
+                      color: Colors.purple,
+                      ),
+                  ),
+                  Expanded(
+                    flex: 25,
+                    child: Container(
+                      color: Colors.deepOrange,
+                      ),
+                  ),
+                  Expanded(
+                    flex: 25,
+                    child: Container(
+                      color: Colors.amberAccent,
+                      ),
+                  ),
+              ],
+              ),
+            ),
+            Container(
+              height: 92,
+              //color: Colors.red,
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    flex: 25,
+                    child: Container(
+                      color: Colors.green,
+                      ),
+                  ),
+                  Expanded(
+                    flex: 25,
+                    child: Container(
+                      color: Colors.amber,
+                      ),
+                  ),
+                  Expanded(
+                    flex: 25,
+                    child: Container(
+                      color: Colors.pink,
+                      ),
+                  ),
+                  Expanded(
+                    flex: 25,
+                    child: Container(
+                      color: Colors.black,
+                      ),
+                  ),
+              ],
+              ),
+            ),
+            Container(
+              height: 92,
+              //color: Colors.red,
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    flex: 25,
+                    child: Container(
+                      color: Colors.red
+                      ),
+                  ),
+                  Expanded(
+                    flex: 25,
+                    child: Container(
+                      color: Colors.purple,
+                      ),
+                  ),
+                  Expanded(
+                    flex: 25,
+                    child: Container(
+                      color: Colors.deepOrange,
+                      ),
+                  ),
+                  Expanded(
+                    flex: 25,
+                    child: Container(
+                      color: Colors.amberAccent,
+                      ),
+                  ),
+              ],
+              ),
+            ),
+            Container(
+              height: 92,
+              //color: Colors.red,
+              child: Row(
+                children: <Widget>[
+                  Expanded(
+                    flex: 25,
+                    child: Container(
+                      color: Colors.amber,
+                      ),
+                  ),
+                  Expanded(
+                    flex: 25,
+                    child: Container(
+                      color: Colors.amber,
+                      ),
+                  ),
+                  Expanded(
+                    flex: 25,
+                    child: Container(
+                      color: Colors.pink,
+                      ),
+                  ),
+                  Expanded(
+                    flex: 25,
+                    child: Container(
+                      color: Colors.amberAccent,
+                      ),
+                  ),
+              ],
+              ),
+            ),
           ],
-          ),
         ),
         // child: TextField(
         //   decoration: InputDecoration.collapsed(hintText: 'Abdellah'),
