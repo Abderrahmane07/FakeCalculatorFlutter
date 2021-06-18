@@ -3,6 +3,9 @@ import 'package:flutter/material.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget{
+  
+
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -25,6 +28,27 @@ class MyApp extends StatelessWidget{
 }
 
 Widget myWidget() {
+  fctBox(Color couleur, String symbol){
+    return Expanded(
+      flex: 25,
+      child: InkWell(
+        onTap: (){
+          print("Container clicked");
+        },
+        child: Container(
+          height: 92,
+          child: Align(
+            alignment: Alignment.center,
+            child: Text(
+              symbol,
+              style: TextStyle(fontSize: 50),
+            ),
+          ),
+          color: couleur,
+        ),
+      )
+    );
+  }
   return Column(
     children: <Widget>[
       Container(
@@ -47,30 +71,46 @@ Widget myWidget() {
               //color: Colors.red,
               child: Row(
                 children: <Widget>[
-                  Expanded(
-                    flex: 25,
-                    child: Container(
-                      color: Colors.green,
-                      ),
-                  ),
-                  Expanded(
-                    flex: 25,
-                    child: Container(
-                      color: Colors.amber,
-                      ),
-                  ),
-                  Expanded(
-                    flex: 25,
-                    child: Container(
-                      color: Colors.pink,
-                      ),
-                  ),
-                  Expanded(
-                    flex: 25,
-                    child: Container(
-                      color: Colors.black,
-                      ),
-                  ),
+                  fctBox(Colors.green, 'C'),
+                  fctBox(Colors.amber, '/'),
+                  fctBox(Colors.pink, 'x'),
+                  fctBox(Colors.white, 'Ic'),
+              ],
+              ),
+            ),
+            Container(
+              height: 92,
+              //color: Colors.red,
+              child: Row(
+                children: <Widget>[
+                  fctBox(Colors.red, '7'),
+                  fctBox(Colors.purple, '8'),
+                  fctBox(Colors.deepOrange, '9'),
+                  fctBox(Colors.amberAccent, '-'),
+              ],
+              ),
+            ),
+            Container(
+              height: 92,
+              //color: Colors.red,
+              child: Row(
+                children: <Widget>[ //green anber pink black
+                  fctBox(Colors.green, '4'),
+                  fctBox(Colors.amber, '5'),
+                  fctBox(Colors.pink, '6'),
+                  fctBox(Colors.white, '+'),
+              ],
+              ),
+            ),
+            Container(
+              height: 92,
+              //color: Colors.red,
+              child: Row(
+                children: <Widget>[
+                  fctBox(Colors.red, '1'),
+                  fctBox(Colors.purple, '2'),
+                  fctBox(Colors.deepOrange, '3'),
+                  fctBox(Colors.amberAccent, '='),
               ],
               ),
             ),
@@ -80,125 +120,13 @@ Widget myWidget() {
               child: Row(
                 children: <Widget>[
                   Expanded(
-                    flex: 25,
-                    child: Container(
-                      color: Colors.red
-                      ),
-                  ),
-                  Expanded(
-                    flex: 25,
-                    child: Container(
-                      color: Colors.purple,
-                      ),
-                  ),
-                  Expanded(
-                    flex: 25,
-                    child: Container(
-                      color: Colors.deepOrange,
-                      ),
-                  ),
-                  Expanded(
-                    flex: 25,
-                    child: Container(
-                      color: Colors.amberAccent,
-                      ),
-                  ),
-              ],
-              ),
-            ),
-            Container(
-              height: 92,
-              //color: Colors.red,
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    flex: 25,
-                    child: Container(
-                      color: Colors.green,
-                      ),
-                  ),
-                  Expanded(
-                    flex: 25,
+                    flex: 50,
                     child: Container(
                       color: Colors.amber,
                       ),
                   ),
-                  Expanded(
-                    flex: 25,
-                    child: Container(
-                      color: Colors.pink,
-                      ),
-                  ),
-                  Expanded(
-                    flex: 25,
-                    child: Container(
-                      color: Colors.black,
-                      ),
-                  ),
-              ],
-              ),
-            ),
-            Container(
-              height: 92,
-              //color: Colors.red,
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    flex: 25,
-                    child: Container(
-                      color: Colors.red
-                      ),
-                  ),
-                  Expanded(
-                    flex: 25,
-                    child: Container(
-                      color: Colors.purple,
-                      ),
-                  ),
-                  Expanded(
-                    flex: 25,
-                    child: Container(
-                      color: Colors.deepOrange,
-                      ),
-                  ),
-                  Expanded(
-                    flex: 25,
-                    child: Container(
-                      color: Colors.amberAccent,
-                      ),
-                  ),
-              ],
-              ),
-            ),
-            Container(
-              height: 92,
-              //color: Colors.red,
-              child: Row(
-                children: <Widget>[
-                  Expanded(
-                    flex: 25,
-                    child: Container(
-                      color: Colors.amber,
-                      ),
-                  ),
-                  Expanded(
-                    flex: 25,
-                    child: Container(
-                      color: Colors.amber,
-                      ),
-                  ),
-                  Expanded(
-                    flex: 25,
-                    child: Container(
-                      color: Colors.pink,
-                      ),
-                  ),
-                  Expanded(
-                    flex: 25,
-                    child: Container(
-                      color: Colors.amberAccent,
-                      ),
-                  ),
+                  fctBox(Colors.pink, '.'),
+                  fctBox(Colors.amberAccent, '='),
               ],
               ),
             ),
