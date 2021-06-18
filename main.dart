@@ -24,15 +24,17 @@ class MyApp extends StatelessWidget{
                   decoration: InputDecoration.collapsed(hintText: 'jwana'),
                 ),
                 padding: EdgeInsets.all(100),
-                margin: EdgeInsets.all(50),
+                margin: EdgeInsets.all(20),
                 color: Colors.blue[50],
               ),
               Container(
-                child: TextField(
-                  decoration: InputDecoration.collapsed(hintText: 'jwana'),
-                ),
-                padding: EdgeInsets.all(100),
-                margin: EdgeInsets.all(50),
+                // child: TextField(
+                //   decoration: InputDecoration.collapsed(hintText: 'Abdellah'),
+                // ),
+                width: double.infinity,
+                height: 460,
+                // padding: EdgeInsets.all(100),
+                // margin: EdgeInsets.all(50),
                 color: Colors.blue[200],
               ),
             ],
