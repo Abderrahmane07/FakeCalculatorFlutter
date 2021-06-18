@@ -41,7 +41,7 @@ Widget myWidget() {
             alignment: Alignment.center,
             child: Text(
               symbol,
-              style: TextStyle(fontSize: 50),
+              style: TextStyle(fontSize: 42),
             ),
           ),
           color: couleur,
@@ -94,9 +94,30 @@ Widget myWidget() {
               height: 92,
               //color: Colors.red,
               child: Row(
-                children: <Widget>[ //green anber pink black
+                children: <Widget>[ 
                   fctBox(Colors.green, '4'),
-                  fctBox(Colors.amber, '5'),
+                  Expanded(
+                    flex: 25,
+                    child: InkWell(
+                      onTap: (){
+                        print("Container clicked");
+                      },
+                      onLongPress: (){
+                        print("Long pressed on numbre 5, lets take you to your contacts");
+                      },
+                      child: Container(
+                        height: 92,
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text(
+                            '5',
+                            style: TextStyle(fontSize: 42),
+                          ),
+                        ),
+                        color: Colors.amber,
+                      ),
+                    )
+                  ),
                   fctBox(Colors.pink, '6'),
                   fctBox(Colors.white, '+'),
               ],
@@ -110,7 +131,7 @@ Widget myWidget() {
                   fctBox(Colors.red, '1'),
                   fctBox(Colors.purple, '2'),
                   fctBox(Colors.deepOrange, '3'),
-                  fctBox(Colors.amberAccent, '='),
+                  fctBox(Colors.amberAccent, '()'),
               ],
               ),
             ),
@@ -121,9 +142,22 @@ Widget myWidget() {
                 children: <Widget>[
                   Expanded(
                     flex: 50,
-                    child: Container(
-                      color: Colors.amber,
+                    child: InkWell(
+                      onTap: (){
+                        print("Big container clicked");
+                      },
+                      child: Container(
+                        height: 92,
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text(
+                            '0',
+                            style: TextStyle(fontSize: 42),
+                          ),
+                        ),
+                        color: Colors.amber,
                       ),
+                    )
                   ),
                   fctBox(Colors.pink, '.'),
                   fctBox(Colors.amberAccent, '='),
