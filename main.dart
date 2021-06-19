@@ -27,6 +27,7 @@ class MyApp extends StatelessWidget{
   }
 }
 
+TextEditingController _nameController = TextEditingController();
 Widget myWidget() {
   fctBox(Color couleur, String symbol){
     return Expanded(
@@ -34,6 +35,7 @@ Widget myWidget() {
       child: InkWell(
         onTap: (){
           print("Container clicked");
+         _nameController.text += symbol; 
         },
         child: Container(
           height: 92,
@@ -49,14 +51,23 @@ Widget myWidget() {
       )
     );
   }
+  
+
+  
+  // TextField(
+  //   controller: _nameController,
+  // );
   return Column(
     children: <Widget>[
       Container(
         child: TextField(
+          controller: _nameController,
           decoration: InputDecoration.collapsed(hintText: 'jwana'),
+          style: TextStyle(fontSize: 40),
+          
         ),
-        padding: EdgeInsets.all(100),
-        margin: EdgeInsets.all(20),
+        padding: EdgeInsets.fromLTRB(20, 100, 20, 100),
+        //margin: EdgeInsets.all(2),
         color: Colors.blue[50],
       ),
       Container(
@@ -101,9 +112,10 @@ Widget myWidget() {
                     child: InkWell(
                       onTap: (){
                         print("Container clicked");
+                        _nameController.text += "5"; 
                       },
                       onLongPress: (){
-                        print("Long pressed on numbre 5, lets take you to your contacts");
+                        print("Long pressed on number 5, lets take you to your contacts");
                       },
                       child: Container(
                         height: 92,
@@ -145,6 +157,7 @@ Widget myWidget() {
                     child: InkWell(
                       onTap: (){
                         print("Big container clicked");
+                        _nameController.text += "0"; 
                       },
                       child: Container(
                         height: 92,
