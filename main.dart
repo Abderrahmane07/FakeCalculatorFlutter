@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget{
     );
   }
 }
-
+String toto = 'toto';
 TextEditingController _nameController = TextEditingController();
 Widget myWidget() {
   fctBox(Color couleur, String symbol){
@@ -36,6 +36,8 @@ Widget myWidget() {
         onTap: (){
           print("Container clicked");
          _nameController.text += symbol; 
+         //toto[0]='';
+         //print(toto.length);
         },
         child: Container(
           height: 92,
@@ -61,8 +63,9 @@ Widget myWidget() {
     children: <Widget>[
       Container(
         child: TextField(
+          //autofocus: true,
           controller: _nameController,
-          decoration: InputDecoration.collapsed(hintText: 'jwana'),
+          //decoration: InputDecoration.collapsed(hintText: 'jwana'),
           style: TextStyle(fontSize: 40),
           
         ),
@@ -82,10 +85,49 @@ Widget myWidget() {
               //color: Colors.red,
               child: Row(
                 children: <Widget>[
-                  fctBox(Colors.green, 'C'),
+                  Expanded(
+                    flex: 25,
+                    child: InkWell(
+                      onTap: (){
+                        print("Container clicked");
+                      _nameController.text = ''; 
+                      //print(toto[0]);
+                      },
+                      child: Container(
+                        height: 92,
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text(
+                            'C',
+                            style: TextStyle(fontSize: 42),
+                          ),
+                        ),
+                        color: Colors.green,
+                      ),
+                    )
+                  ),
                   fctBox(Colors.amber, '/'),
                   fctBox(Colors.pink, 'x'),
-                  fctBox(Colors.white, 'Ic'),
+                  Expanded(
+                    flex: 25,
+                    child: InkWell(
+                      onTap: (){
+                        print("Container clicked");
+                      _nameController.text = _nameController.text.substring(0, _nameController.text.length-1); 
+                      },
+                      child: Container(
+                        height: 92,
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text(
+                            'Ic',
+                            style: TextStyle(fontSize: 42),
+                          ),
+                        ),
+                        color: Colors.white,
+                      ),
+                    )
+                  ),
               ],
               ),
             ),
@@ -173,7 +215,7 @@ Widget myWidget() {
                     )
                   ),
                   fctBox(Colors.pink, '.'),
-                  fctBox(Colors.amberAccent, '='),
+                  fctBox(Colors.blue, '='),
               ],
               ),
             ),
