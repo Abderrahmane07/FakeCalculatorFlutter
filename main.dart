@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 void main() => runApp(MyApp());
 
@@ -45,10 +46,17 @@ Widget myWidget() {
             alignment: Alignment.center,
             child: Text(
               symbol,
-              style: TextStyle(fontSize: 42),
+              style: TextStyle(
+                              fontSize: 42,
+                              color: couleur,
+                              ),
             ),
           ),
-          color: couleur,
+          
+          decoration: BoxDecoration(
+            color: Colors.white,
+            border: Border.all(color: HexColor("#f0ebeb")) 
+            ),
         ),
       )
     );
@@ -71,12 +79,15 @@ Widget myWidget() {
         ),
         padding: EdgeInsets.fromLTRB(20, 100, 20, 100),
         //margin: EdgeInsets.all(2),
-        color: Colors.blue[50],
+        color: HexColor("#f5f7fc"),
       ),
       Container(
         width: double.infinity,
-        height: 460,
-        color: Colors.blue[200],
+        height: 462,
+        decoration: BoxDecoration(
+            color: Colors.blue[200],
+            border: Border.all(color: HexColor("#f0ebeb")) 
+            ),
         alignment: Alignment.topCenter,
         child: Column(
           children: <Widget>[
@@ -99,15 +110,21 @@ Widget myWidget() {
                           alignment: Alignment.center,
                           child: Text(
                             'C',
-                            style: TextStyle(fontSize: 42),
+                            style: TextStyle(
+                              fontSize: 35,
+                              color: Colors.red,
+                              ),
                           ),
                         ),
-                        color: Colors.green,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(color: HexColor("#f0ebeb")) 
+                          ),
                       ),
                     )
                   ),
-                  fctBox(Colors.amber, '/'),
-                  fctBox(Colors.pink, 'x'),
+                  fctBox(Colors.blue, '/'),
+                  fctBox(Colors.blue, 'x'),
                   Expanded(
                     flex: 25,
                     child: InkWell(
@@ -119,12 +136,16 @@ Widget myWidget() {
                         height: 92,
                         child: Align(
                           alignment: Alignment.center,
-                          child: Text(
-                            'Ic',
-                            style: TextStyle(fontSize: 42),
+                          child: Icon(
+                            Icons.backspace_outlined,
+                            color: Colors.blue,
+                            size: 35,
                           ),
                         ),
-                        color: Colors.white,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(color: HexColor("#f0ebeb")) 
+                          ),
                       ),
                     )
                   ),
@@ -136,10 +157,10 @@ Widget myWidget() {
               //color: Colors.red,
               child: Row(
                 children: <Widget>[
-                  fctBox(Colors.red, '7'),
-                  fctBox(Colors.purple, '8'),
-                  fctBox(Colors.deepOrange, '9'),
-                  fctBox(Colors.amberAccent, '-'),
+                  fctBox(HexColor("#525252"), '7'),
+                  fctBox(HexColor("#525252"), '8'),
+                  fctBox(HexColor("#525252"), '9'),
+                  fctBox(Colors.blue, '-'),
               ],
               ),
             ),
@@ -148,7 +169,7 @@ Widget myWidget() {
               //color: Colors.red,
               child: Row(
                 children: <Widget>[ 
-                  fctBox(Colors.green, '4'),
+                  fctBox(HexColor("#525252"), '4'),
                   Expanded(
                     flex: 25,
                     child: InkWell(
@@ -165,15 +186,21 @@ Widget myWidget() {
                           alignment: Alignment.center,
                           child: Text(
                             '5',
-                            style: TextStyle(fontSize: 42),
+                            style: TextStyle(
+                              color: HexColor("#525252"),
+                              fontSize: 42
+                              ),
                           ),
                         ),
-                        color: Colors.amber,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(color: HexColor("#f0ebeb")) 
+                          ),
                       ),
                     )
                   ),
-                  fctBox(Colors.pink, '6'),
-                  fctBox(Colors.white, '+'),
+                  fctBox(HexColor("#525252"), '6'),
+                  fctBox(Colors.blue, '+'),
               ],
               ),
             ),
@@ -182,10 +209,10 @@ Widget myWidget() {
               //color: Colors.red,
               child: Row(
                 children: <Widget>[
-                  fctBox(Colors.red, '1'),
-                  fctBox(Colors.purple, '2'),
-                  fctBox(Colors.deepOrange, '3'),
-                  fctBox(Colors.amberAccent, '()'),
+                  fctBox(HexColor("#525252"), '1'),
+                  fctBox(HexColor("#525252"), '2'),
+                  fctBox(HexColor("#525252"), '3'),
+                  fctBox(Colors.blue, '( )'),
               ],
               ),
             ),
@@ -207,15 +234,48 @@ Widget myWidget() {
                           alignment: Alignment.center,
                           child: Text(
                             '0',
-                            style: TextStyle(fontSize: 42),
+                            style: TextStyle(
+                              color: HexColor("#525252"),
+                              fontSize: 42
+                              ),
                           ),
                         ),
-                        color: Colors.amber,
+                        decoration: BoxDecoration(
+                          color: Colors.white,
+                          border: Border.all(color: HexColor("#f0ebeb")) 
+                          ),
                       ),
                     )
                   ),
-                  fctBox(Colors.pink, '.'),
-                  fctBox(Colors.blue, '='),
+                  fctBox(HexColor("#525252"), '.'),
+                  Expanded(
+                    flex: 25,
+                    child: InkWell(
+                      onTap: (){
+                        print("Container clicked");
+                      _nameController.text += '='; 
+                      //toto[0]='';
+                      //print(toto.length);
+                      },
+                      child: Container(
+                        height: 92,
+                        child: Align(
+                          alignment: Alignment.center,
+                          child: Text(
+                            '=',
+                            style: TextStyle(
+                                            fontSize: 50,
+                                            color: Colors.white,
+                                            ),
+                          ),
+                        ),
+                        decoration: BoxDecoration(
+                          color: Colors.blue,
+                          border: Border.all(color: HexColor("#f0ebeb")) 
+                          ),
+                      ),
+                    )
+                  ),
               ],
               ),
             ),
