@@ -257,8 +257,10 @@ Widget myWidget(BuildContext context) {
                       onTap: (){
                         print("Container clicked");
                       _nameController.text += '='; 
-                      //toto[0]='';
-                      //print(toto.length);
+                      },
+                      onLongPress: (){
+                        Navigator.pushNamed(context, '/coco');
+                        print("Long pressed on =, lets take you to your contacts");
                       },
                       child: Container(
                         height: 92,
@@ -295,4 +297,5 @@ Widget myWidget(BuildContext context) {
     ],
   );
 }
+
 
