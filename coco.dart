@@ -15,17 +15,24 @@ class Coco extends StatefulWidget {
 
 class _CocoState extends State<Coco> {
 
-  final List<String> _searchable = [
-    'fransa',
-    'taha',
-    'lcobra',
-    'Trissian',
-    'Abdellah',
-    'fransa',
-    'taha',
-    'lcobra',
-    'Trissian',
-    'Abdellah',
+  final _searchable = [
+    {'name':'Papi', 'number': '21266****948'},
+    {'name':'Dandy', 'number': '3366*****77'},
+    {'name':'Mami', 'number': '21266****391'},
+    {'name':'Souhaila', 'number': '2126****335'},
+    {'name':'Stitouu', 'number': '21266****648'},
+    {'name':'Ana', 'number': '21264*****38'},
+    {'name':'Selama', 'number': '212*****22'},
+    {'name':'lcobra', 'number': '0661******8'},
+    {'name':'Trissian', 'number': '06*****48'},
+    {'name':'Abdellah', 'number': '066******48'},
+    {'name':'Mountassir', 'number': '33******1974'},
+    {'name':'Dandy', 'number': '336*****077'},
+    {'name':'Mami', 'number': '2126*****91'},
+    {'name':'Souhaila', 'number': '212******9335'},
+    {'name':'Stitouu', 'number': '21********648'},
+    {'name':'Ana', 'number': '2126*****38'},
+    {'name':'Selama', 'number': '212******722'}
   ];
 
 
@@ -71,7 +78,7 @@ class _CocoState extends State<Coco> {
               child: TextField(
                 decoration: InputDecoration(
                   border: OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(25))
+                    borderRadius: BorderRadius.all(Radius.circular(5))
                   ),
                   prefix: Icon(Icons.search),
                   labelText: 'Search'
@@ -91,23 +98,37 @@ class _CocoState extends State<Coco> {
                       side: BorderSide(color: Colors.white70, width: 1),
                       borderRadius: BorderRadius.circular(10)
                     ),
-                    child: Container(
-                      margin: EdgeInsets.all(9),
-                      padding: EdgeInsets.all(6),
-                      child: Row(
-                        children: [
-                          CircleAvatar(
-                            child: Text('${items[index][0]}'),
-                            backgroundColor: Colors.green,
-                            foregroundColor: Colors.white,
-                          ),
-                          Padding(padding: EdgeInsets.all(8)),
-                          Text(
-                            '${items[index]}',
-                            style: TextStyle(fontSize: 20),
-                          )
-                        ],
+                    child: GestureDetector(
+                      child: Container(
+                        margin: EdgeInsets.all(9),
+                        padding: EdgeInsets.all(6),
+                        child: Row(
+                          //mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          //crossAxisAlignment: CrossAxisAlignment.center,
+                          children: [
+                            CircleAvatar(
+                              child: Text('${(items[index]['name'][0]).toUpperCase()}', style: TextStyle(fontSize: 25)),
+                              backgroundColor: Colors.green,
+                              foregroundColor: Colors.white,
+                            ),
+                            Padding(padding: EdgeInsets.all(8)),
+                            Text(
+                              '${items[index]['name']}',
+                              style: TextStyle(fontSize: 20),
+                            ),
+                            //SizedBox(width: 60,),
+                            Spacer(),
+                            Text(
+                              '${items[index]['number']}',
+                              style: TextStyle(fontSize: 14, color: Colors.grey[600]),
+                            )
+                          ],
+                        ),
                       ),
+                      onLongPress: (){
+                        print('You are going to copy this persons number: ${items[index]['name']}');
+                        Navigator.pushNamed(context, '/', arguments: {'phone':items[index]['number']});
+                      },
                     ),
                   );
                 },
@@ -124,14 +145,14 @@ class _CocoState extends State<Coco> {
   }
 
   void filterContact(String searchTerm){
-    List<String> tmpSearchList = [];
+    var tmpSearchList = [];
 
     tmpSearchList.addAll(_searchable);
 
     if(searchTerm.isNotEmpty){
-      List<String> tmpList = [];
+      List<Map<String, dynamic>> tmpList = [];
       tmpSearchList.forEach((element) {
-        if(element.toLowerCase().contains(searchTerm.trim())){
+        if(element['name'].toLowerCase().contains(searchTerm.trim())){
           tmpList.add(element);
         }
       });
