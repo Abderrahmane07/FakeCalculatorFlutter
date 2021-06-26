@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
+    //debugShowCheckedModeBanner: false,
     home: Previous(),
   ));
 }
@@ -85,7 +86,7 @@ class _PreviousState extends State<Previous> {
                 fontWeight: FontWeight.bold
               )
             ),
-            SizedBox(height: 30,),
+            SizedBox(height: 30),
             Row(
               children: <Widget>[
                 Icon(
@@ -104,24 +105,7 @@ class _PreviousState extends State<Previous> {
                 ),
               ],
             ),
-            SizedBox(height: 30,),
-            Text(
-              'Name',
-              style: TextStyle(
-                color: Colors.grey,
-                letterSpacing: 2,
-              )
-            ),
-            SizedBox(height: 10),
-            Text(
-              'Abdellah',
-              style: TextStyle(
-                color: Colors.yellow[500],
-                letterSpacing: 2,
-                fontSize: 25,
-                fontWeight: FontWeight.bold
-              )
-            ),
+            SizedBox(height: 30),
           ],
           )
           ),
