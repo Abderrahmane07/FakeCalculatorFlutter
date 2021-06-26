@@ -27,11 +27,16 @@ class Home extends StatelessWidget{
     );
   }
 }
-Map toto = {};
+
+bool valeur = false; 
+Map toto = {'phone':'212662350648'};
 TextEditingController _nameController = TextEditingController();
 Widget myWidget(BuildContext context) {
 
-  toto = ModalRoute.of(context).settings.arguments as Map;
+  if(ModalRoute.of(context).settings.arguments != null){
+    toto = ModalRoute.of(context).settings.arguments as Map;
+  }
+  
 
   fctBox(Color couleur, String symbol){
     return Expanded(
@@ -41,7 +46,9 @@ Widget myWidget(BuildContext context) {
           child: InkWell(
             onTap: (){
               print("Container clicked");
-             _nameController.text += symbol; 
+              //valeur = true;
+              _nameController.text += symbol; 
+              //valeur = false;
             },
             child: Container(
               height: 92,
@@ -85,7 +92,9 @@ Widget myWidget(BuildContext context) {
           //autofocus: true,
           controller: _nameController,
           //decoration: InputDecoration.collapsed(hintText: 'jwana'),
-          style: TextStyle(fontSize: 40),
+          style: TextStyle(fontSize: 40,
+          //color: valeur == false ? Colors.blue: Colors.black,          
+          ),
           
         ),
         padding: EdgeInsets.fromLTRB(20, 100, 20, 100),
@@ -149,7 +158,10 @@ Widget myWidget(BuildContext context) {
                         child: InkWell(
                           onTap: (){
                             print("Container clicked");
-                            _nameController.text = _nameController.text.substring(0, _nameController.text.length-1); 
+                            if(_nameController.text.length>0){
+                              _nameController.text = _nameController.text.substring(0, _nameController.text.length-1); 
+                            }
+                            
                           },
                           child: Container(
                             height: 92,
