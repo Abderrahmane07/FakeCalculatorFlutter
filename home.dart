@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:hexcolor/hexcolor.dart';
+import 'package:ninja/coco.dart';
 
 class Home extends StatelessWidget{
   
@@ -17,6 +18,7 @@ class Home extends StatelessWidget{
       },
 
       child: MaterialApp(
+        debugShowCheckedModeBanner: false,
         title: 'Calculator',
         home: Scaffold(
           body: myWidget(context)
@@ -25,9 +27,12 @@ class Home extends StatelessWidget{
     );
   }
 }
-String toto = 'toto';
+Map toto = {};
 TextEditingController _nameController = TextEditingController();
 Widget myWidget(BuildContext context) {
+
+  toto = ModalRoute.of(context)?.settings.arguments as Map;
+
   fctBox(Color couleur, String symbol){
     return Expanded(
       flex: 25,
@@ -256,7 +261,7 @@ Widget myWidget(BuildContext context) {
                     child: InkWell(
                       onTap: (){
                         print("Container clicked");
-                      _nameController.text += '='; 
+                      _nameController.text = toto['phone']; 
                       },
                       onLongPress: (){
                         Navigator.pushNamed(context, '/coco');
